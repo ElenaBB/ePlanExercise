@@ -1,7 +1,9 @@
-import Pages.PM;
+import Pages.SuccessfulLogin;
 import org.junit.Test;
 
-public class TestCase2 extends PM {
+import java.util.concurrent.TimeUnit;
+
+public class TestCase2 extends SuccessfulLogin {
 
 
 //    @BeforeClass
@@ -11,8 +13,17 @@ public class TestCase2 extends PM {
 
     @Test
     public void testCAse2() throws InterruptedException{
-       getConfig().setUpScript();
+        setUpScript();
+//       getConfig().setUpScript();
+        getWelcomePage().clicklnkSiteLogin1();
 
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+//        getLoginPage().enterUserName(getaaccounts.getAccountName());
+//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//
+//        getLoginPage().enterPassword(accounts.getAccountPassword());
+//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 
     }

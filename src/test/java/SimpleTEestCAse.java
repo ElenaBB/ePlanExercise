@@ -15,7 +15,7 @@ import static java.lang.System.setProperty;
 
 // Use Case # 3
 // Preconditions: password from Test Case #2 has been reset.
-public class SimpleTEestCAse /*extends PM*/ {
+public class SimpleTEestCAse /*extends SuccessfulLogin*/ {
 
     String resetEmailAddress = "eplantesting@mailinator.com";
     String securityQuestion = "Denver";

@@ -6,13 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static java.lang.System.setProperty;
 
-public class PM {
+public class SuccessfulLogin {
 
     public WebDriver driver;
     protected POM pages;
     private Config config;
 
-    public PM(){
+    public SuccessfulLogin(){
 
     }
 
@@ -26,6 +26,7 @@ public class PM {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        pages = PageREsourcesFactory.getPageResources(driver);
     }
 
     protected WebDriver getDriver() { //visible from subclasses, not public OR private
