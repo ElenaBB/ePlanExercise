@@ -37,7 +37,6 @@ public class SelfServicePasswordReset {
         PasswordReset passReset = new PasswordReset(driver);
         Accounts accounts = new Accounts();
         PasswordResetSecurityQuestion secQ = new PasswordResetSecurityQuestion(driver);
-//        GuerrillaMail guerrillaMail = new GuerrillaMail(driver);
         NewPassword newPassword = new NewPassword(driver);
 
 
