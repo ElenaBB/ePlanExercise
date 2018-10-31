@@ -6,13 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static java.lang.System.setProperty;
 
-public class SuccessfulLogin {
+public class PM {
 
     public WebDriver driver;
     protected POM pages;
     private Config config;
 
-    public SuccessfulLogin(){
+    public PM(){
 
     }
 

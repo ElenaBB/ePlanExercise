@@ -11,14 +11,16 @@ import java.util.concurrent.TimeUnit;
 
 import static java.lang.System.setProperty;
 
+/* Use Case #1 - "happy path" - entering valid login and password. In Assert.Equals -
+ verification the user is logged in to their account */
 
-public class TCHappyPath {
+public class SuccessfulLogin {
 
     String userName;
     String expectedUserName = "Jack Holloway";
 
     @Test
-    public void verifyWelcomePage() throws InterruptedException{
+    public void verifyWelcomePage() throws InterruptedException {
 
         setProperty("webdriver.chrome.driver", "C:\\webdriver\\chrome\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
