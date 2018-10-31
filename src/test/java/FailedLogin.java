@@ -10,6 +10,10 @@ import java.util.concurrent.TimeUnit;
 
 import static java.lang.System.setProperty;
 
+/*
+Use Case #2 - "Entering wrong password and locking the account."
+
+ */
 public class FailedLogin {
 
     String lockedAccountMessage = "Account is locked due to too many failed attempts.";
@@ -27,9 +31,9 @@ public class FailedLogin {
         WelcomePage welcomePage = new WelcomePage(driver);
         LoginPage loginPage = new LoginPage(driver);
         Accounts accounts = new Accounts();
-//        ProfilePage profilePage = new ProfilePage(driver);
 
-        welcomePage.clicklnkSiteLogin1();
+        // Now clicking on the second login link
+        welcomePage.clicklnkSiteLogin2();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         loginPage.enterUserName(accounts.getAccountName());
@@ -44,7 +48,6 @@ public class FailedLogin {
         // clear invalid password - 2
         loginPage.clearPassword();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
 
         loginPage.enterPassword(accounts.getWrongPassword2());
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

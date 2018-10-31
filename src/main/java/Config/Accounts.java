@@ -22,7 +22,6 @@ public class Accounts {
         return fullAccountName;
     }
 
-
     public String getWrongPassword1() {
         return invalidPassword1;
     }

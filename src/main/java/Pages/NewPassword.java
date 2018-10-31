@@ -31,7 +31,4 @@ public class NewPassword {
         driver.findElement(btnContinue).click();
     }
 
-    //*[@id="main-container"]/div[2]/div/div/div[2]/a[1]
-
-
 }

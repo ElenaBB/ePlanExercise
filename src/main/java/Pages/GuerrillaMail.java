@@ -16,7 +16,6 @@ public class GuerrillaMail {
     By btnSetMailBox = By.xpath("//*[@id='inbox-id']/button[@class='save button small']");
     By lnkEmailTab = By.xpath("//a[@title='Email']");
     By lnkLastEmail = By.xpath("//tbody[@id='email_list']/tr[1]");
-    //    By txtEmailBody = By.xpath("//div[@class='email_body']/pre");
     By txtEmailBody = By.xpath("//*[@id=\"display_email\"]/div/div[2]/div");
 
     public void clickBtnMailBox() {

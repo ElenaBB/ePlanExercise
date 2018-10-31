@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
 
     WebDriver driver;
-//    WebElement element;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -39,28 +38,7 @@ public class LoginPage {
     }
 
     public String getTxtAccountIsLocked() {
-       return driver.findElement(txtAccountIsLocked).getText();
+        return driver.findElement(txtAccountIsLocked).getText();
     }
-
-
-//    public LoginPage(){
-//        System.out.println("Empty LoginPage constructor");
-//    }
-
-//    public WebElement txtUserName() {
-//        element = driver.findElement(By.xpath("//input[@name='username']"));
-//        return element;
-//    }
-//
-//    public WebElement txtPassword() {
-//        element = driver.findElement(By.xpath("//input[@name='password']"));
-//        return element;
-//    }
-//
-//    public WebElement btnLogin() {
-//        element = driver.findElement(By.xpath("//*[@id=\"loginButton\"]"));
-//        return element;
-//    }
-
 
 }

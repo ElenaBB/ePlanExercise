@@ -23,8 +23,4 @@ public class ProfilePage {
         return driver.findElement(txtProfileName).getText();
     }
 
-    public void clickLnkSignOut() {
-        driver.findElement(lnkSignOut).click();
-    }
-
 }

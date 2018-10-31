@@ -10,11 +10,11 @@ public class PasswordResetSecurityQuestion {
         this.driver = driver;
     }
 
+
     By txtSecurityQuestion = By.xpath("//*[@id=\"secQuestion\"]");
     By btnFinish = By.xpath("//*[@id=\"finishButton\"]");
 
     public void enterTxtSecurityQuestion(String secQuestion) {
-
         driver.findElement(txtSecurityQuestion).sendKeys(secQuestion);
     }
 

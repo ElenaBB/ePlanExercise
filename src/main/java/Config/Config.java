@@ -16,19 +16,11 @@ public class Config {
     private String password;
     WebDriver driver;
 
-//    public Config() {
-//    }
-
-
     public Config(WebDriver driver) {
         this.driver = driver;
     }
 
-
-
-
     public void setUpScript() {
-
 
         setProperty("webdriver.chrome.driver", "C:\\webdriver\\chrome\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -36,24 +28,5 @@ public class Config {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-
-//       driver.get("https://accounts.google.com/");
-
-
-//    public String getBaseURL() {
-//        return baseURL;
-//    }
-//
-//    public void setBaseURL(String baseURL) {
-//        this.baseURL = baseURL;
-//    }
-//
-//    public BrowserType getBrowserType() {
-//        return browserType;
-//    }
-//
-//    public void setBrowserType(BrowserType browserType) {
-//        this.browserType = browserType;
-//    }
     }
 }

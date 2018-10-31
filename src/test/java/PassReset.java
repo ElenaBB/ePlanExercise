@@ -1,5 +1,4 @@
 import Config.Accounts;
-import Config.Mailinator;
 import Pages.LoginPage;
 import Pages.ProfilePage;
 import Pages.WelcomePage;
