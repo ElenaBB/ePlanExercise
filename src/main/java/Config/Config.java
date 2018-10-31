@@ -2,7 +2,6 @@ package Config;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import sun.plugin2.util.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,10 +9,10 @@ import static java.lang.System.setProperty;
 
 public class Config {
 
-    private String baseURL;
-    private BrowserType browserType;
-    private String userName;
-    private String password;
+//    private String baseURL;
+//    private BrowserType browserType;
+//    private String userName;
+//    private String password;
     WebDriver driver;
 
     public Config(WebDriver driver) {

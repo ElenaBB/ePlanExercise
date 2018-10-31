@@ -11,13 +11,16 @@ import java.util.concurrent.TimeUnit;
 
 import static java.lang.System.setProperty;
 
-// Preconditions: user account has been locked (see Test Case #2)
+/*
+Use Case #3 - : Self-service password reset
+Preconditions: user account has been locked (see Test Case #2)
+To get the temporary password, I used a Guerrilla mail disposable account.
+*/
 
 public class SelfServicePasswordReset {
 
-//    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*()-_=+[{]}\\|;:\'\",<.>/?";
     String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&?@";
-    String newPas = RandomStringUtils.random( 15, characters );
+    String newPas = RandomStringUtils.random(15, characters);
     String securityQuestion = "Denver";
     String userName;
     String expectedUserName = "Jack Holloway";
@@ -49,14 +52,12 @@ public class SelfServicePasswordReset {
         passReset.clickBtnResetPassword();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-//        Thread.sleep(2000);
         passReset.enterTxtUserName(accounts.getAccountName());
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Thread.sleep(2000);
 
         passReset.clickBtnContinue();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//        Thread.sleep(2000);
 
         secQ.enterTxtSecurityQuestion(securityQuestion);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -64,7 +65,7 @@ public class SelfServicePasswordReset {
         secQ.clickBtnFinish();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        // go to Guerilla mail
+        // go to Guerrilla mail
 
         setProperty("webdriver.chrome.driver", "C:\\webdriver\\chrome\\chromedriver.exe");
         WebDriver driver2 = new ChromeDriver();
@@ -86,16 +87,14 @@ public class SelfServicePasswordReset {
         Thread.sleep(1000);
         String messagePassword = guerrillaMail.getTextEmailBody();
 
-        // getting temp password from message
+        // getting temp password from the message
         String[] lines = messagePassword.split("\\r?\\n");
         int index = Arrays.asList(lines).indexOf("Your new TEMPORARY account password is:");
         String tempPassword = lines[index + 2].trim();
-        System.out.println("Temp password: <"+tempPassword+"> index: "+ index);
+        System.out.println("Temp password: <" + tempPassword + "> index: " + index);
         driver2.close();
 
-
-        // back to Login
-
+        // go back to Login
         loginPage.clickBtnLogin();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -124,9 +123,7 @@ public class SelfServicePasswordReset {
         profilePage.clickLnkProfileName();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-//        profilePage.clickLnkSignOut();
         userName = profilePage.getTextProfileName();
-
 
         try {
             Assert.assertEquals(userName, expectedUserName);
@@ -135,10 +132,6 @@ public class SelfServicePasswordReset {
             System.out.println("Test case failed.");
             throw e;
         }
-
-
-
-
 
     }
 }

@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import static java.lang.System.setProperty;
 
 /* Use Case #1 - "happy path" - entering valid login and password. In Assert.Equals -
- verification the user is logged in to their account */
+ verification that user is logged in to their account */
 
 public class SuccessfulLogin {
 
