@@ -32,7 +32,6 @@ public class FailedLogin {
         LoginPage loginPage = new LoginPage(driver);
         Accounts accounts = new Accounts();
 
-        // Now clicking on the second login link
         welcomePage.clicklnkSiteLogin2();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -45,7 +44,6 @@ public class FailedLogin {
         loginPage.clickBtnLogin();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        // clear invalid password - 2
         loginPage.clearPassword();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -55,7 +53,6 @@ public class FailedLogin {
         loginPage.clickBtnLogin();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        // clear invalid password - 3
         loginPage.clearPassword();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -63,15 +60,10 @@ public class FailedLogin {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         loginPage.clickBtnLogin();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-        String abc = loginPage.getTxtAccountIsLocked();
-        System.out.println("<"+abc+">");
-
-        Thread.sleep(4000);
+        Thread.sleep(2000);
 
         try {
-            Assert.assertEquals(loginPage.getTxtAccountIsLocked(), lockedAccountMessage);;
+            Assert.assertEquals(loginPage.getTxtAccountIsLocked(), lockedAccountMessage);
             System.out.println("Test case passed. Account is locked.");
         } catch (AssertionError e) {
             System.out.println("Test case failed.");

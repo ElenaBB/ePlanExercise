@@ -49,7 +49,6 @@ public class SuccessfulLogin {
 
         userName = profilePage.getTextProfileName();
 
-
         try {
             Assert.assertEquals(userName, expectedUserName);
             System.out.println("Test case passed. User successfully logged in");
@@ -57,5 +56,7 @@ public class SuccessfulLogin {
             System.out.println("Test case failed.");
             throw e;
         }
+
+        driver.close();
     }
 }

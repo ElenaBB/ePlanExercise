@@ -15,7 +15,7 @@ public class LoginPage {
     By txtPassword = By.xpath("//input[@name='password']");
     By btnLogin = By.id("loginButton");
     By lnkTroubleSigningIn = By.xpath("//a[@class='link trouble-link-branding is']");
-    By txtAccountIsLocked = By.xpath("//*[@id=\"main-container\"]/div[2]/div[4]/div[2]/form/div[3]/span");
+    By txtAccountIsLocked = By.xpath("//span[@class='login-error ng-binding']");
 
     public void enterUserName(String userName) {
         driver.findElement(txtUserName).sendKeys(userName);
